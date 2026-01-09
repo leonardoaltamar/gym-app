@@ -1,0 +1,16 @@
+<div class="h-screen w-full flex items-center justify-center">
+
+  <z-card class="w-full md:w-94" zTitle="Login" zDescription="Ingrese su usuario y contraseña">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <input z-input formControlName="username" placeholder="Ingrese su usuario" />
+      </div>
+      <div class="mb-4">
+        <input z-input type="password" formControlName="password" placeholder="Ingrese su contraseña" />
+      </div>
+      <div class="w-full">
+        <button z-button type="submit" class="w-full">Iniciar sesión</button>
+      </div>
+    </form>
+  </z-card>
+</div>

@@ -1,0 +1,14 @@
+<div class="min-h-screen flex flex-col">
+
+    <div class=" w-full flex items-center justify-between shadow-lg p-4 py-3">
+        <h2>Logo</h2>
+        <div class="flex gap-1">
+            <fa-icon [icon]="faSignOut"></fa-icon>
+            <h2>Log out</h2>
+        </div>
+    </div>
+
+    <main class="flex flex-1 overflow-auto w-full">
+        <router-outlet></router-outlet>
+    </main>
+</div>
