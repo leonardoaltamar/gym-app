@@ -1,14 +1,23 @@
-<div class="min-h-screen flex flex-col">
+<div class="flex h-screen w-full bg-gray-50 overflow-hidden">
+    <!-- Sidebar -->
+    <app-sidebar-navigation></app-sidebar-navigation>
 
-    <div class=" w-full flex items-center justify-between shadow-lg p-4 py-3">
-        <h2>Logo</h2>
-        <div class="flex gap-1">
-            <fa-icon [icon]="faSignOut"></fa-icon>
-            <h2>Log out</h2>
-        </div>
+    <!-- Main Content Area -->
+    <div class="flex flex-col flex-1 min-w-0 h-full font-sans">
+        <!-- Header -->
+        <header
+            class="w-full h-16 bg-white flex items-center justify-between px-6 shadow-sm z-10 shrink-0 border-b border-gray-100">
+            <h2 class="text-xl font-semibold text-slate-700"></h2>
+            <div
+                class="flex items-center gap-3 cursor-pointer hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors group">
+                <fa-icon class="text-red-400 group-hover:text-red-500 transition-colors" [icon]="faSignOut"></fa-icon>
+                <h2 class="text-red-400 font-medium group-hover:text-red-500 transition-colors">Log out</h2>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto p-6 scroll-smooth">
+            <router-outlet></router-outlet>
+        </main>
     </div>
-
-    <main class="flex flex-1 overflow-auto w-full">
-        <router-outlet></router-outlet>
-    </main>
 </div>

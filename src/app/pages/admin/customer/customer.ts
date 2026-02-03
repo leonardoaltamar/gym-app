@@ -7,16 +7,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-trainer',
+  selector: 'app-customer',
   imports: [ZardButtonComponent, FontAwesomeModule, ZardCardComponent, ZardTableComponent],
-  templateUrl: './trainer.html',
-  styleUrl: './trainer.css',
+  templateUrl: './customer.html',
+  styleUrl: './customer.css',
 })
-export class Trainer {
-  constructor(private router: Router) {}
+export class Customer {
+
+  constructor( private router: Router ){
+
+  }
 
   faPlus = faPlus;
-  listOfData: any[] = [
+    listOfData: any[] = [
     {
       key: '1',
       name: 'John Brown',
@@ -37,7 +40,8 @@ export class Trainer {
     },
   ];
 
-  redirectCreateTrainer() {
-    this.router.navigate(['/admin/trainer/create']);
+  redirectCreateCustomer() {
+    // Lógica para redirigir a la página de creación de cliente
+    this.router.navigate(['/admin/customer/create']);    
   }
 }

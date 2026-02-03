@@ -1,0 +1,131 @@
+<div class="h-full w-full flex flex-col gap-10">
+  <div class="flex justify-between items-center">
+    <div>
+      <h1 class="text-xl font-bold">Registro de clientes</h1>
+      <p>En este formulario podrá registrar un nuevo cliente</p>
+    </div>
+  </div>
+  <div class="w-full flex justify-center">
+    <z-card class="w-full">
+      <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+        <h2 class="mb-4 font-bold">Información personal</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+          <z-form-field>
+            <label z-form-label zRequired>Tipo de documento</label>
+            <z-form-control>
+              <z-select zPlaceholder="Seleccione un tipo de documento" formControlName="documentType">
+                <z-select-item zValue="apple">Apple</z-select-item>
+                <z-select-item zValue="banana">Banana</z-select-item>
+                <z-select-item zValue="blueberry">Blueberry</z-select-item>
+                <z-select-item zValue="grapes">Grapes</z-select-item>
+                <z-select-item zValue="pineapple" zDisabled>Pineapple</z-select-item>
+              </z-select>
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Numero de documento</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="documentNumber" placeholder="Escriba su primer nombre"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Primer nombre</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="firstName" placeholder="Escriba su primer nombre"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label>Segundo nombre</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="secondName" placeholder="Escriba su segundo nombre"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Primer apellido</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="lastname" placeholder="Escriba su primer apellido"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label>Segundo apellido</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="secondLastname" placeholder="Escriba su segundo apellido"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Genero</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="gender" placeholder="Escriba su primer apellido"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Fecha de expedición del documento</label>
+            <z-form-control>
+              <z-date-picker formControlName="expeditionDate" placeholder="Pick a date" class="w-full" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Fecha de nacimiento</label>
+            <z-form-control>
+              <z-date-picker formControlName="birthDate" placeholder="Pick a date" class="w-full" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Estatura (cm)</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="stature" placeholder="Escriba su primer apellido"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Peso (Kg)</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="weight" placeholder="Escriba su primer apellido"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+        </div>
+
+        <h2 class="mb-4 font-bold">Información de contacto</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-4">
+          <z-form-field>
+            <label z-form-label zRequired>Correo electronico</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="email" placeholder="Escriba su primer nombre"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+
+          <z-form-field>
+            <label z-form-label zRequired>Numero de telefono</label>
+            <z-form-control>
+              <input z-input type="text" formControlName="phoneNumber" placeholder="Escriba su primer nombre"
+                name="fullName" />
+            </z-form-control>
+          </z-form-field>
+        </div>
+
+        <div class="flex justify-end gap-2">
+          <button z-button type="button" zType="outline">Cancelar</button>
+          <button z-button type="submit">Guardar cliente</button>
+        </div>
+      </form>
+    </z-card>
+  </div>
+</div>
